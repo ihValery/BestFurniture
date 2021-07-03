@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		80854207268FE0F100CD5424 /* BestFurnitureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80854206268FE0F100CD5424 /* BestFurnitureApp.swift */; };
-		80854209268FE0F100CD5424 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80854208268FE0F100CD5424 /* ContentView.swift */; };
+		80854209268FE0F100CD5424 /* TabBarMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80854208268FE0F100CD5424 /* TabBarMenu.swift */; };
 		8085420B268FE0F400CD5424 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8085420A268FE0F400CD5424 /* Assets.xcassets */; };
 		8085420E268FE0F400CD5424 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8085420D268FE0F400CD5424 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -16,7 +16,7 @@
 /* Begin PBXFileReference section */
 		80854203268FE0F100CD5424 /* BestFurniture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BestFurniture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80854206268FE0F100CD5424 /* BestFurnitureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestFurnitureApp.swift; sourceTree = "<group>"; };
-		80854208268FE0F100CD5424 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		80854208268FE0F100CD5424 /* TabBarMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarMenu.swift; sourceTree = "<group>"; };
 		8085420A268FE0F400CD5424 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8085420D268FE0F400CD5424 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8085420F268FE0F400CD5424 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,7 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				80854206268FE0F100CD5424 /* BestFurnitureApp.swift */,
-				80854208268FE0F100CD5424 /* ContentView.swift */,
+				80854208268FE0F100CD5424 /* TabBarMenu.swift */,
 				80854215268FE11F00CD5424 /* System32 */,
 			);
 			path = BestFurniture;
@@ -146,7 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80854209268FE0F100CD5424 /* ContentView.swift in Sources */,
+				80854209268FE0F100CD5424 /* TabBarMenu.swift in Sources */,
 				80854207268FE0F100CD5424 /* BestFurnitureApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -205,7 +205,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -260,7 +260,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -280,7 +280,7 @@
 				DEVELOPMENT_TEAM = 879U287R5Q;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = BestFurniture/System32/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +302,7 @@
 				DEVELOPMENT_TEAM = 879U287R5Q;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = BestFurniture/System32/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
