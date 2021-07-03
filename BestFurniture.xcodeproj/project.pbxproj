@@ -11,6 +11,9 @@
 		80854209268FE0F100CD5424 /* TabBarMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80854208268FE0F100CD5424 /* TabBarMenu.swift */; };
 		8085420B268FE0F400CD5424 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8085420A268FE0F400CD5424 /* Assets.xcassets */; };
 		8085420E268FE0F400CD5424 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8085420D268FE0F400CD5424 /* Preview Assets.xcassets */; };
+		80854233268FE76000CD5424 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80854232268FE76000CD5424 /* Color.swift */; };
+		80854236268FEAD000CD5424 /* OneButtonTBM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80854235268FEAD000CD5424 /* OneButtonTBM.swift */; };
+		8085423A268FF69D00CD5424 /* Pit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80854239268FF69C00CD5424 /* Pit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,9 @@
 		8085420A268FE0F400CD5424 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8085420D268FE0F400CD5424 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8085420F268FE0F400CD5424 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80854232268FE76000CD5424 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		80854235268FEAD000CD5424 /* OneButtonTBM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneButtonTBM.swift; sourceTree = "<group>"; };
+		80854239268FF69C00CD5424 /* Pit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +59,9 @@
 			isa = PBXGroup;
 			children = (
 				80854206268FE0F100CD5424 /* BestFurnitureApp.swift */,
-				80854208268FE0F100CD5424 /* TabBarMenu.swift */,
+				80854234268FE86800CD5424 /* View */,
+				80854231268FE74E00CD5424 /* Extension */,
+				80854238268FF62700CD5424 /* Shape */,
 				80854215268FE11F00CD5424 /* System32 */,
 			);
 			path = BestFurniture;
@@ -75,6 +83,39 @@
 				8085420C268FE0F400CD5424 /* Preview Content */,
 			);
 			path = System32;
+			sourceTree = "<group>";
+		};
+		80854231268FE74E00CD5424 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				80854232268FE76000CD5424 /* Color.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		80854234268FE86800CD5424 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				80854208268FE0F100CD5424 /* TabBarMenu.swift */,
+				80854237268FEBBF00CD5424 /* ChilView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		80854237268FEBBF00CD5424 /* ChilView */ = {
+			isa = PBXGroup;
+			children = (
+				80854235268FEAD000CD5424 /* OneButtonTBM.swift */,
+			);
+			path = ChilView;
+			sourceTree = "<group>";
+		};
+		80854238268FF62700CD5424 /* Shape */ = {
+			isa = PBXGroup;
+			children = (
+				80854239268FF69C00CD5424 /* Pit.swift */,
+			);
+			path = Shape;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,8 +187,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8085423A268FF69D00CD5424 /* Pit.swift in Sources */,
 				80854209268FE0F100CD5424 /* TabBarMenu.swift in Sources */,
 				80854207268FE0F100CD5424 /* BestFurnitureApp.swift in Sources */,
+				80854236268FEAD000CD5424 /* OneButtonTBM.swift in Sources */,
+				80854233268FE76000CD5424 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
