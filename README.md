@@ -6,8 +6,7 @@
     - улучшить его анимацией
 
 - TabBarMenu - отлично реализована + анимация
-<img src="https://github.com/ihValery/NikeShop/blob/main/image/TabBarMenu.gif?raw=true"></a>
+<img src="https://github.com/ihValery/BestFurniture/blob/main/image/TabBarMenu.gif?raw=true"></a>
 
 - Слева Dribble с права моя реализация
-
 <img src="?raw=true"></a>
