@@ -13,10 +13,10 @@ struct TabBarMenu: View {
     
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
-            Color.orangeFurniture.opacity(0.3)
+            LinearGradient(gradient: Gradient(colors: [Color.white, Color.grayFurniture]), startPoint: .top, endPoint: .bottom)
             
             HStack {
-                OneButtonTBM(icon: "house", number: 0, index: $index, pit: $pitPosition)
+                OneButtonTBM(icon: "home", number: 0, index: $index, pit: $pitPosition)
                 Spacer()
                 OneButtonTBM(icon: "heart", number: 1, index: $index, pit: $pitPosition)
                 Spacer()
@@ -24,10 +24,11 @@ struct TabBarMenu: View {
                 Spacer()
                 OneButtonTBM(icon: "cart", number: 3, index: $index, pit: $pitPosition)
                 Spacer()
-                OneButtonTBM(icon: "person", number: 4, index: $index, pit: $pitPosition)
+                OneButtonTBM(icon: "user", number: 4, index: $index, pit: $pitPosition)
             }
-            .padding(.horizontal, 25)
-            .padding(.bottom, 10)
+            //В зависимости от девайса у нас разный padding
+            .padding(.horizontal, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 25 : 35)
+            .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 8 : UIApplication.shared.windows.first?.safeAreaInsets.bottom)
             .padding(.top, 8)
             .background(Color.white.clipShape(Pit(pitPosition: pitPosition)))
         }
