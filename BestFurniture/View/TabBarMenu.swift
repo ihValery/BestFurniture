@@ -12,8 +12,8 @@ struct TabBarMenu: View {
     @State private var pitPosition: CGFloat = UIScreen.main.bounds.width / 2
     
     var body: some View {
-        ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
-            LinearGradient(gradient: Gradient(colors: [Color.white, Color.grayFurniture]), startPoint: .top, endPoint: .bottom)
+        VStack {
+            Spacer()
             
             HStack {
                 OneButtonTBM(icon: "home", number: 0, index: $index, pit: $pitPosition)
@@ -27,12 +27,11 @@ struct TabBarMenu: View {
                 OneButtonTBM(icon: "user", number: 4, index: $index, pit: $pitPosition)
             }
             //В зависимости от девайса у нас разный padding
-            .padding(.horizontal, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 25 : 35)
+            .padding(.horizontal, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 25 : 30)
             .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 8 : UIApplication.shared.windows.first?.safeAreaInsets.bottom)
             .padding(.top, 8)
             .background(Color.white.clipShape(Pit(pitPosition: pitPosition)))
         }
-        .edgesIgnoringSafeArea(.all)
     }
 }
 
