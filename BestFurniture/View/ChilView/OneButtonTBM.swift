@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct OneButtonTBM: View {
-    var icon: String
-    var number: Int
+    let icon: String
+    let number: Int
     @Binding var index: Int
     @Binding var pit: CGFloat
     
