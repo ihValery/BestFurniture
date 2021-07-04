@@ -14,10 +14,11 @@
 		80854233268FE76000CD5424 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80854232268FE76000CD5424 /* Color.swift */; };
 		80854236268FEAD000CD5424 /* OneButtonTBM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80854235268FEAD000CD5424 /* OneButtonTBM.swift */; };
 		8085423A268FF69D00CD5424 /* Pit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80854239268FF69C00CD5424 /* Pit.swift */; };
-		8085423E2690E7F500CD5424 /* SelectionFurniture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8085423D2690E7F500CD5424 /* SelectionFurniture.swift */; };
+		8085423E2690E7F500CD5424 /* OneButtonFurniture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8085423D2690E7F500CD5424 /* OneButtonFurniture.swift */; };
 		808542412691062900CD5424 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808542402691062900CD5424 /* MainView.swift */; };
 		808542432691085600CD5424 /* TopPanelMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808542422691085600CD5424 /* TopPanelMenu.swift */; };
 		8085424526910C4000CD5424 /* BannerMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8085424426910C4000CD5424 /* BannerMainView.swift */; };
+		808542472691204700CD5424 /* SelectPanelFurniture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808542462691204700CD5424 /* SelectPanelFurniture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,10 +31,11 @@
 		80854232268FE76000CD5424 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		80854235268FEAD000CD5424 /* OneButtonTBM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneButtonTBM.swift; sourceTree = "<group>"; };
 		80854239268FF69C00CD5424 /* Pit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pit.swift; sourceTree = "<group>"; };
-		8085423D2690E7F500CD5424 /* SelectionFurniture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionFurniture.swift; sourceTree = "<group>"; };
+		8085423D2690E7F500CD5424 /* OneButtonFurniture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneButtonFurniture.swift; sourceTree = "<group>"; };
 		808542402691062900CD5424 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		808542422691085600CD5424 /* TopPanelMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPanelMenu.swift; sourceTree = "<group>"; };
 		8085424426910C4000CD5424 /* BannerMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerMainView.swift; sourceTree = "<group>"; };
+		808542462691204700CD5424 /* SelectPanelFurniture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPanelFurniture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,8 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				808542402691062900CD5424 /* MainView.swift */,
+				808542462691204700CD5424 /* SelectPanelFurniture.swift */,
 				80854208268FE0F100CD5424 /* TabBarMenu.swift */,
-				8085423D2690E7F500CD5424 /* SelectionFurniture.swift */,
 				808542422691085600CD5424 /* TopPanelMenu.swift */,
 				8085424426910C4000CD5424 /* BannerMainView.swift */,
 				80854237268FEBBF00CD5424 /* ChilView */,
@@ -118,6 +120,7 @@
 		80854237268FEBBF00CD5424 /* ChilView */ = {
 			isa = PBXGroup;
 			children = (
+				8085423D2690E7F500CD5424 /* OneButtonFurniture.swift */,
 				80854235268FEAD000CD5424 /* OneButtonTBM.swift */,
 			);
 			path = ChilView;
@@ -211,7 +214,8 @@
 				808542412691062900CD5424 /* MainView.swift in Sources */,
 				80854209268FE0F100CD5424 /* TabBarMenu.swift in Sources */,
 				80854207268FE0F100CD5424 /* BestFurnitureApp.swift in Sources */,
-				8085423E2690E7F500CD5424 /* SelectionFurniture.swift in Sources */,
+				8085423E2690E7F500CD5424 /* OneButtonFurniture.swift in Sources */,
+				808542472691204700CD5424 /* SelectPanelFurniture.swift in Sources */,
 				808542432691085600CD5424 /* TopPanelMenu.swift in Sources */,
 				80854236268FEAD000CD5424 /* OneButtonTBM.swift in Sources */,
 				8085424526910C4000CD5424 /* BannerMainView.swift in Sources */,

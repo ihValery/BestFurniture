@@ -8,32 +8,26 @@
 import SwiftUI
 
 struct MainView: View {
+    
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [Color.white, Color.grayFurniture]), startPoint: .top, endPoint: .bottom)
             
             VStack(spacing: 30) {
                 TopPanelMenu()
+                    .padding(.horizontal, 30)
                 
                 BannerMainView()
+                    .padding(.horizontal, 30)
                 
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 20) {
-                        SelectionFurniture(name: "Chair", action: {})
-                        SelectionFurniture(name: "Table", action: {})
-                        SelectionFurniture(name: "Cupboard", action: {})
-                        SelectionFurniture(name: "Sofa", action: {})
-                        SelectionFurniture(name: "Buffet", action: {})
-                    }
-                }
+                SelectPanelFurniture()
+                
                 Spacer()
             }
-            .padding(.top)
-            .padding(30)
             
             TabBarMenu()
         }
-        .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+        .edgesIgnoringSafeArea(.bottom)
     }
 }
 
