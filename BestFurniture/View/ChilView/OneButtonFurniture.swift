@@ -33,6 +33,7 @@ struct OneButtonFurniture: View {
                         .foregroundColor(index == number ? .white : .purpleFurniture)
                         .font(.title2)
                 }
+                .fixedSize()
                 .padding(.horizontal)
                 .padding(.vertical, 11)
                 .background(RoundedRectangle(cornerRadius: 13)
