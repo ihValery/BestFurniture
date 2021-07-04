@@ -15,7 +15,7 @@ struct OneButtonFurniture: View {
     
     var body: some View {
         Button(action: {
-            withAnimation(.spring(dampingFraction: 0.7)) {
+            withAnimation(.spring(dampingFraction: 0.6)) {
                 index = number
             }
             action()

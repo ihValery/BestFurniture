@@ -14,6 +14,8 @@ struct TopPanelMenu: View {
             Spacer()
             OneImageForTPM(name: "cart")
         }
+        .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 5 : 0)
+        .padding(.horizontal, 22)
     }
 }
 

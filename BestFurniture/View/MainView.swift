@@ -8,27 +8,28 @@
 import SwiftUI
 
 struct MainView: View {
+    @State private var selectFur: Int = 0
     
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [.white, .grayFurniture]), startPoint: .top, endPoint: .bottom)
             
-            VStack(spacing: 27) {
+            VStack(spacing: UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 10 : 27) {
                 TopPanelMenu()
-                    .padding(.horizontal, 22)
                 
                 BannerMainView()
-                    .padding(.horizontal, 22)
                 
-                SearchPanel()
-                    .padding(.horizontal, 22)
+                SearchPanel(selectFur: $selectFur)
                 
-                SelectPanelFurniture()
+                SelectPanelFurniture(selectFur: $selectFur)
                     .padding(.top, 10)
                 
+                OneCardFurniture()
+                
+                OneCardFurniture()
                 Spacer()
             }
-            
+
             TabBarMenu()
         }
         .edgesIgnoringSafeArea(.bottom)

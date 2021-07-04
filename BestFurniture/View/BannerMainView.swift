@@ -20,6 +20,7 @@ struct BannerMainView: View {
             }
             Spacer()
         }
+        .padding(.horizontal, 22)
     }
 }
 

@@ -20,6 +20,9 @@
 		8085424526910C4000CD5424 /* BannerMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8085424426910C4000CD5424 /* BannerMainView.swift */; };
 		808542472691204700CD5424 /* SelectPanelFurniture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808542462691204700CD5424 /* SelectPanelFurniture.swift */; };
 		80A23BF726915DB60041BD2F /* SearchPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A23BF626915DB60041BD2F /* SearchPanel.swift */; };
+		80FDE5B52692095300FCCD1A /* OneCardFurniture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FDE5B42692095300FCCD1A /* OneCardFurniture.swift */; };
+		80FDE5B726920D1200FCCD1A /* OneImageFurniture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FDE5B626920D1200FCCD1A /* OneImageFurniture.swift */; };
+		80FDE5B92692139E00FCCD1A /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FDE5B82692139E00FCCD1A /* LikeButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		8085424426910C4000CD5424 /* BannerMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerMainView.swift; sourceTree = "<group>"; };
 		808542462691204700CD5424 /* SelectPanelFurniture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPanelFurniture.swift; sourceTree = "<group>"; };
 		80A23BF626915DB60041BD2F /* SearchPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPanel.swift; sourceTree = "<group>"; };
+		80FDE5B42692095300FCCD1A /* OneCardFurniture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCardFurniture.swift; sourceTree = "<group>"; };
+		80FDE5B626920D1200FCCD1A /* OneImageFurniture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneImageFurniture.swift; sourceTree = "<group>"; };
+		80FDE5B82692139E00FCCD1A /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,11 +116,12 @@
 			isa = PBXGroup;
 			children = (
 				808542402691062900CD5424 /* MainView.swift */,
+				80FDE5B42692095300FCCD1A /* OneCardFurniture.swift */,
+				808542422691085600CD5424 /* TopPanelMenu.swift */,
+				8085424426910C4000CD5424 /* BannerMainView.swift */,
 				80A23BF626915DB60041BD2F /* SearchPanel.swift */,
 				808542462691204700CD5424 /* SelectPanelFurniture.swift */,
 				80854208268FE0F100CD5424 /* TabBarMenu.swift */,
-				808542422691085600CD5424 /* TopPanelMenu.swift */,
-				8085424426910C4000CD5424 /* BannerMainView.swift */,
 				80854237268FEBBF00CD5424 /* ChilView */,
 			);
 			path = View;
@@ -123,6 +130,8 @@
 		80854237268FEBBF00CD5424 /* ChilView */ = {
 			isa = PBXGroup;
 			children = (
+				80FDE5B626920D1200FCCD1A /* OneImageFurniture.swift */,
+				80FDE5B82692139E00FCCD1A /* LikeButton.swift */,
 				8085423D2690E7F500CD5424 /* OneButtonFurniture.swift */,
 				80854235268FEAD000CD5424 /* OneButtonTBM.swift */,
 			);
@@ -214,16 +223,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				8085423A268FF69D00CD5424 /* Pit.swift in Sources */,
+				80FDE5B52692095300FCCD1A /* OneCardFurniture.swift in Sources */,
 				808542412691062900CD5424 /* MainView.swift in Sources */,
 				80A23BF726915DB60041BD2F /* SearchPanel.swift in Sources */,
 				80854209268FE0F100CD5424 /* TabBarMenu.swift in Sources */,
 				80854207268FE0F100CD5424 /* BestFurnitureApp.swift in Sources */,
+				80FDE5B92692139E00FCCD1A /* LikeButton.swift in Sources */,
 				8085423E2690E7F500CD5424 /* OneButtonFurniture.swift in Sources */,
 				808542472691204700CD5424 /* SelectPanelFurniture.swift in Sources */,
 				808542432691085600CD5424 /* TopPanelMenu.swift in Sources */,
 				80854236268FEAD000CD5424 /* OneButtonTBM.swift in Sources */,
 				8085424526910C4000CD5424 /* BannerMainView.swift in Sources */,
 				80854233268FE76000CD5424 /* Color.swift in Sources */,
+				80FDE5B726920D1200FCCD1A /* OneImageFurniture.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

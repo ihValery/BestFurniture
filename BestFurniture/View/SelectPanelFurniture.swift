@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SelectPanelFurniture: View {
-    @State private var selectFur: Int = 0
+    @Binding var selectFur: Int
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -30,6 +30,6 @@ struct SelectPanelFurniture: View {
 
 struct SelectPanelFurniture_Previews: PreviewProvider {
     static var previews: some View {
-        SelectPanelFurniture()
+        SelectPanelFurniture(selectFur: .constant(0))
     }
 }
