@@ -30,8 +30,8 @@ struct OneImageForTPM: View {
         Image(name)
             .renderingMode(.template)
             .resizable()
-            .frame(width: 28, height: 28)
-            .padding(13)
+            .frame(width: 23, height: 23)
+            .padding(9)
             .foregroundColor(.purpleFurniture)
             .overlay(
                 RoundedRectangle(cornerRadius: 13)

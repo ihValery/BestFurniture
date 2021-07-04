@@ -31,11 +31,12 @@ struct OneButtonFurniture: View {
                     }
                     Text(name)
                         .foregroundColor(index == number ? .white : .purpleFurniture)
-                        .font(.title2)
+                        .font(.body)
+                        .padding(.vertical, 5)
                 }
                 .fixedSize()
-                .padding(.horizontal)
-                .padding(.vertical, 11)
+                .padding(.horizontal, 10)
+                .padding(.vertical, 5)
                 .background(RoundedRectangle(cornerRadius: 13)
                                 .fill(index == number ? Color.orangeFurniture : Color.clear))
                 .overlay(
