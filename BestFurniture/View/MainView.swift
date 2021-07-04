@@ -11,16 +11,20 @@ struct MainView: View {
     
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [Color.white, Color.grayFurniture]), startPoint: .top, endPoint: .bottom)
+            LinearGradient(gradient: Gradient(colors: [.white, .grayFurniture]), startPoint: .top, endPoint: .bottom)
             
-            VStack(spacing: 30) {
+            VStack(spacing: 27) {
                 TopPanelMenu()
-                    .padding(.horizontal, 30)
+                    .padding(.horizontal, 22)
                 
                 BannerMainView()
-                    .padding(.horizontal, 30)
+                    .padding(.horizontal, 22)
+                
+                SearchPanel()
+                    .padding(.horizontal, 22)
                 
                 SelectPanelFurniture()
+                    .padding(.top, 10)
                 
                 Spacer()
             }

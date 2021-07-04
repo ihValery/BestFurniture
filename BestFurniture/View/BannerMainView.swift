@@ -15,7 +15,7 @@ struct BannerMainView: View {
                     .font(.largeTitle.bold())
                     .foregroundColor(.purpleFurniture)
                 Text("Perfect Choice!")
-                    .font(.title3.bold())
+                    .font(.body.bold())
                     .foregroundColor(.orangeFurniture)
             }
             Spacer()
