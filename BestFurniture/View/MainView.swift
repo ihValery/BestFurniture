@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
+    @State private var selectFur: Int = 0
     
     var body: some View {
         ZStack {
@@ -15,15 +16,12 @@ struct MainView: View {
             
             VStack(spacing: 27) {
                 TopPanelMenu()
-                    .padding(.horizontal, 22)
                 
                 BannerMainView()
-                    .padding(.horizontal, 22)
                 
-                SearchPanel()
-                    .padding(.horizontal, 22)
+                SearchPanel(selectFur: $selectFur)
                 
-                SelectPanelFurniture()
+                SelectPanelFurniture(selectFur: $selectFur)
                     .padding(.top, 10)
                 
                 Spacer()

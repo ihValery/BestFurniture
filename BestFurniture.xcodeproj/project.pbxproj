@@ -110,11 +110,11 @@
 			isa = PBXGroup;
 			children = (
 				808542402691062900CD5424 /* MainView.swift */,
+				808542422691085600CD5424 /* TopPanelMenu.swift */,
+				8085424426910C4000CD5424 /* BannerMainView.swift */,
 				80A23BF626915DB60041BD2F /* SearchPanel.swift */,
 				808542462691204700CD5424 /* SelectPanelFurniture.swift */,
 				80854208268FE0F100CD5424 /* TabBarMenu.swift */,
-				808542422691085600CD5424 /* TopPanelMenu.swift */,
-				8085424426910C4000CD5424 /* BannerMainView.swift */,
 				80854237268FEBBF00CD5424 /* ChilView */,
 			);
 			path = View;

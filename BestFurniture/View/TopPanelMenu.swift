@@ -14,6 +14,7 @@ struct TopPanelMenu: View {
             Spacer()
             OneImageForTPM(name: "cart")
         }
+        .padding(.horizontal, 22)
     }
 }
 
