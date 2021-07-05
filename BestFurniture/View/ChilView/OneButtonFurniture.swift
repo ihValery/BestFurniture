@@ -8,29 +8,28 @@
 import SwiftUI
 
 struct OneButtonFurniture: View {
-    let name: String
-    let number: Int
-    @Binding var index: Int
+    let type: Category
+    @Binding var select: Category
     let action: () -> ()
     
     var body: some View {
         Button(action: {
             withAnimation(.spring(dampingFraction: 0.6)) {
-                index = number
+                select = type
             }
             action()
         }, label: {
             HStack {
                 HStack {
-                    if index == number {
-                        Image(name)
+                    if select == type {
+                        Image(type.rawValue.firstCapitalized)
                             .renderingMode(.template)
                             .resizable()
                             .frame(width: 28, height: 28)
                             .foregroundColor(.white)
                     }
-                    Text(name)
-                        .foregroundColor(index == number ? .white : .purpleFurniture)
+                    Text(type.rawValue.firstCapitalized)
+                        .foregroundColor(select == type ? .white : .purpleFurniture)
                         .font(.body)
                         .padding(.vertical, 5)
                 }
@@ -38,10 +37,10 @@ struct OneButtonFurniture: View {
                 .padding(.horizontal, 10)
                 .padding(.vertical, 5)
                 .background(RoundedRectangle(cornerRadius: 13)
-                                .fill(index == number ? Color.orangeFurniture : Color.clear))
+                                .fill(select == type ? Color.orangeFurniture : Color.clear))
                 .overlay(
                     RoundedRectangle(cornerRadius: 13)
-                        .stroke(Color.gray.opacity(0.5), lineWidth: index == number ? 0 : 1))
+                        .stroke(Color.gray.opacity(0.5), lineWidth: select == type ? 0 : 1))
             }
             .padding(1)
         })
@@ -50,6 +49,6 @@ struct OneButtonFurniture: View {
 
 struct SelectionFurniture_Previews: PreviewProvider {
     static var previews: some View {
-        OneButtonFurniture(name: "Table", number: 1, index: .constant(1), action: {})
+        OneButtonFurniture(type: .all, select: .constant(.all), action: {})
     }
 }
