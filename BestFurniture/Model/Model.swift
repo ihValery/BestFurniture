@@ -7,19 +7,20 @@
 
 import SwiftUI
 
-struct Furniture: Identifiable {
+struct Furniture: Identifiable, Codable, Hashable {
     var id: Int
     var name: String
-    var image: Image
-    var info: String
-    var infoBig: String
-    var price: Float
-    var color: [Color]
-        
-        
-//        [ColorFurn]
-//
-//    struct ColorFurn {
-//        var color: Color
-//    }
+    var category: String
+    var description: String
+    var isFavorite: Bool
+    
+    private var price: Double
+    var priceStr: String {
+        String(format: "$%.1f", price)
+    }
+    
+    private var imageName: String
+    var image: Image {
+        Image(imageName)
+    }
 }

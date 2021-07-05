@@ -8,7 +8,18 @@
 import SwiftUI
 
 struct MainView: View {
-    @State private var selectFur: Int = 0
+    @EnvironmentObject var viewModel: ModelData
+    @State private var selectedСategory = Category.chair
+    
+    var filtelFutnitures: [Furniture] {
+        if selectedСategory != .all {
+            return viewModel.furnitures.filter { item in
+                item.category == selectedСategory.rawValue
+            }
+        } else {
+            return viewModel.furnitures
+        }
+    }
     
     var body: some View {
         ZStack {
@@ -18,15 +29,15 @@ struct MainView: View {
                 TopPanelMenu()
                 
                 BannerMainView()
-
-                SearchPanel(selectFur: $selectFur)
                 
-                SelectPanelFurniture(selectFur: $selectFur)
+                SearchPanel(selectedСategory: $selectedСategory)
+                
+                CategoryPanel(category: $selectedСategory)
                     .padding(.top, 10)
                 
                 ScrollView {
                     VStack(spacing: 13) {
-                        ForEach(dataFurniture) { item in
+                        ForEach(filtelFutnitures) { item in
                             OneCardFurniture(furniture: item)
                                 .padding(.horizontal, 22)
                         }
@@ -34,7 +45,7 @@ struct MainView: View {
                     .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 65 : 90)
                 }
             }
-
+            
             TabBarMenu()
         }
         .edgesIgnoringSafeArea(.bottom)
@@ -44,5 +55,6 @@ struct MainView: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
+            .environmentObject(ModelData())
     }
 }

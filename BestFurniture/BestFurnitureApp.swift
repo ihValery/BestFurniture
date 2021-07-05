@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct BestFurnitureApp: App {
+    @StateObject private var viewModel = ModelData()
+    
     var body: some Scene {
         WindowGroup {
             MainView()
+                .environmentObject(viewModel)
         }
     }
 }

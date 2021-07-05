@@ -38,6 +38,7 @@ struct OneButtonTBM: View {
                                 .shadow(color: .orangeFurniture.opacity(0.6), radius: 5, x: 0, y: 5))
                 })
                 .offset(y: index == number ? -35 : 0)
+                .disabled(index == number)
             }
             .frame(width: 43, height: 43)
         }
