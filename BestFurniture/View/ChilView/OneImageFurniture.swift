@@ -23,7 +23,6 @@ struct OneImageFurniture: View {
 
 struct OneImageFurniture_Previews: PreviewProvider {
     static var previews: some View {
-        let item = dataFurniture[0]
-        OneImageFurniture(furniture: item)
+        OneImageFurniture(furniture: ModelData().furnitures[0])
     }
 }

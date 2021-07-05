@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct MainView: View {
-    @State private var selectFur: Int = 0
+    @State private var category: Int = 0
+    @EnvironmentObject var viewModel: ModelData
     
     var body: some View {
         ZStack {
@@ -19,14 +20,14 @@ struct MainView: View {
                 
                 BannerMainView()
 
-                SearchPanel(selectFur: $selectFur)
+                SearchPanel(selectFur: $category)
                 
-                SelectPanelFurniture(selectFur: $selectFur)
+                CategoryPanel(selectFur: $category)
                     .padding(.top, 10)
                 
                 ScrollView {
                     VStack(spacing: 13) {
-                        ForEach(dataFurniture) { item in
+                        ForEach(viewModel.furnitures) { item in
                             OneCardFurniture(furniture: item)
                                 .padding(.horizontal, 22)
                         }
@@ -44,5 +45,6 @@ struct MainView: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
+            .environmentObject(ModelData())
     }
 }

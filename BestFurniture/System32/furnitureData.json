@@ -1,0 +1,83 @@
+[
+    {
+        "name": "Lyrra Chair",
+        "category": "chair",
+        "id": 0,
+        "isFavorite": false,
+        "description": "Ergonomical for humans body curve. The beautiful Egg chair by Arne Jacobsen is made even prettier and slightly more comfortable with the matching footrest. Arne Jacobsen designed Egg for the lobby and reception areas at the SAS Royal Hotel in Copenhagen. Decorate this classic lightweight armchair with a footrest for a homey, comfortable and beautiful experience. When Arne Jacobsen designed the SAS Royal Hotel in Copenhagen in the late 1950s, he also created the Egg, Swan, Swan sofa, 3300 Series and Drop. With this furniture, Arne Jacobsen rewrote the history of Danish design around the world.",
+        "imageName": "chair1red",
+        "price": 250.0
+    },
+    {
+        "name": "Retro Round",
+        "category": "chair",
+        "id": 1,
+        "isFavorite": false,
+        "description": "Seating Moder retro Round - Chair. Combining modern geometric lines with a comfortably padded seat, Oslo Counter & Bar lends playful lines a sophistication with a comfortable footrest that allows the user to sit for hours a day. The Oslo Counter & Bar chair brings an elegant touch to any place in the home, restaurant or workplace.",
+        "imageName": "chair2red",
+        "price": 350.0
+    },
+    {
+        "name": "Love Body",
+        "category": "chair",
+        "id": 2,
+        "isFavorite": false,
+        "description": "For humans body. When Arne Jacobsen designed the SAS Royal Hotel in Copenhagen in the late 1950s, he also created the Egg, Swan, Swan sofa, 3300 Series and Drop. With this furniture, Arne Jacobsen rewrote the history of Danish design around the world.",
+        "imageName": "chair4gray",
+        "price": 270.0
+    },
+    {
+        "name": "Egg Footstool",
+        "category": "chair",
+        "id": 3,
+        "isFavorite": false,
+        "description": "The beautiful Egg chair by Arne Jacobsen is made even prettier and slightly more comfortable with the matching footrest. Arne Jacobsen designed Egg for the lobby and reception areas at the SAS Royal Hotel in Copenhagen. Decorate this classic lightweight armchair with a footrest for a homey, comfortable and beautiful experience. When Arne Jacobsen designed the SAS Royal Hotel in Copenhagen in the late 1950s, he also created the Egg, Swan, Swan sofa, 3300 Series and Drop. With this furniture, Arne Jacobsen rewrote the history of Danish design around the world. The casing is made of synthetic material, lined with cold curing foam, covered with fabric or leather. Leg stool without swivel function. The stem is a star-shaped base made of polished satin-finished aluminum, and the tips are made from black nylon.",
+        "imageName": "chair3brown",
+        "price": 180.0
+    },
+    {
+        "name": "Gubi Dining Table",
+        "category": "table",
+        "id": 4,
+        "isFavorite": false,
+        "description": "The GUBI dining table was developed in 2013 by Komplot Design. The GUBI dining table is the perfect match for the iconic GUBI 3D chair. This round and organic table retains much of the same design language and aesthetic as the classic plywood chair. The warm wooden Komplot table is the perfect complement to any chair thanks to its classic design.",
+        "imageName": "table1brown",
+        "price": 320.0
+    },
+    {
+        "name": "Stub Table",
+        "category": "table",
+        "id": 5,
+        "isFavorite": false,
+        "description": "The elegant coffee table by Danish architect Mette Schelde is a natural blend of materials. This unique design seamlessly blends wood and glass. Inspired by landscapes of wooden stumps, the Stub (which is Danish for tree stump) has a transparent glass circle that floats around the base with no visible screws or fasteners.",
+        "imageName": "table5brown",
+        "price": 420.0
+    },
+    {
+        "name": "Circular coffee",
+        "category": "table",
+        "id": 6,
+        "isFavorite": false,
+        "description": "The entire table series was inspired by designer Pete Hein's solution to the road problems at Sergels Torg in Stockholm: a super-elliptical circular motion. This version of the oval had some attractive qualities and looked remarkably harmonious regardless of size. The Table series is nothing less than the best quality, which is why FH also found the best quality laminate flooring. Fenix ​​laminate flooring is extremely scratch resistant, and its matte surface accepts light rather than reflects it. It is very easy to clean and does not leave fingerprints. The table top consists of 22 mm laminated chipboard with laminate or veneer. Laminate is available with an aluminum edge, while the veneer version comes with a wooden edge. The base is chrome-plated steel with a base of 4 or 6 stars (at three heights) in polished satin-finished aluminum.",
+        "imageName": "table2brown",
+        "price": 350.0
+    },
+    {
+        "name": "Split Table",
+        "category": "table",
+        "id": 7,
+        "isFavorite": false,
+        "description": "With its distinctive split-legged design, the Split Table can be integrated into any given setting with its oak body filling the room with warmth that exemplifies the essence of Scandinavian design. Solid oak table for private or professional use for dinner, restaurants, meetings, etc. Staffan Holm wanted the table to have an organic expression and combine structural strength with a seemingly subtler balancing action. The split and curved legs detail has the look and feel of a skilled cabinet maker and is likely to become the hallmark of the Split table.",
+        "imageName": "table3brown",
+        "price": 280.0
+    },
+    {
+        "name": "Mategot Side Table",
+        "category": "table",
+        "id": 8,
+        "isFavorite": false,
+        "description": "The Matégot coffee table by Mathieu Matego was designed in 1960. The organic expressive form, clear or smoked glass give the table a special chic, this design will suit any modern home. The brass base of this elegant piece contrasts with the visual lightness of the glass top. The Matégot coffee table was created in accordance with the changing style of the time. The combination of glass, brass and leather at the time demonstrated the return of well-being and luxury to the post-war era. Matego began to gradually move away from the asceticism, which is clearly visible in his earlier models made of perforated metal. The Matégot table is more sophisticated and less spartan.",
+        "imageName": "table4black",
+        "price": 280.0
+    }
+]

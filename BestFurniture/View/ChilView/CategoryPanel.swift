@@ -1,5 +1,5 @@
 //
-//  SelectPanelFurniture.swift
+//  CategoryPanel.swift
 //  BestFurniture
 //
 //  Created by Валерий Игнатьев on 4.07.21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SelectPanelFurniture: View {
+struct CategoryPanel: View {
     @Binding var selectFur: Int
     
     var body: some View {
@@ -30,6 +30,6 @@ struct SelectPanelFurniture: View {
 
 struct SelectPanelFurniture_Previews: PreviewProvider {
     static var previews: some View {
-        SelectPanelFurniture(selectFur: .constant(0))
+        CategoryPanel(selectFur: .constant(0))
     }
 }

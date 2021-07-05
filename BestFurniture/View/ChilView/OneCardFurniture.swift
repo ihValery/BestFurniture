@@ -21,7 +21,7 @@ struct OneCardFurniture: View {
                         .foregroundColor(.purpleFurniture)
                     
                     Spacer()
-                    Text(furniture.info)
+                    Text(furniture.description)
                         .lineLimit(2)
                         .fixedSize(horizontal: false, vertical: true)
                         .font(.body)
@@ -29,7 +29,7 @@ struct OneCardFurniture: View {
                     
                     Spacer()
                     HStack {
-                        Text("$\(String(format: "%.1f", furniture.price))")
+                        Text(furniture.priceStr)
                             .font(.headline)
                             .bold()
                             .foregroundColor(.orangeFurniture)
@@ -58,7 +58,6 @@ struct OneCardFurniture: View {
 
 struct OneCardFurniture_Previews: PreviewProvider {
     static var previews: some View {
-        let item = dataFurniture[0]
-        OneCardFurniture(furniture: item)
+        OneCardFurniture(furniture: ModelData().furnitures[0])
     }
 }
