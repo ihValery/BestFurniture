@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TabBarMenu: View {
+    var sz = ScreenSize()
     @State private var index = 2
     @State private var pitPosition: CGFloat = UIScreen.main.bounds.width / 2
     
@@ -27,8 +28,8 @@ struct TabBarMenu: View {
                 OneButtonTBM(icon: "user", number: 4, index: $index, pit: $pitPosition)
             }
             //В зависимости от девайса у нас разный padding
-            .padding(.horizontal, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 25 : 30)
-            .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 8 : UIApplication.shared.windows.first?.safeAreaInsets.bottom)
+            .padding(.horizontal, sz.insets(25, or: 30))
+            .padding(.bottom, sz.insets(8))
             .padding(.top, 8)
             .background(Color.white.clipShape(Pit(pitPosition: pitPosition)))
         }

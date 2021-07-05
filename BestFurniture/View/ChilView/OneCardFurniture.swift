@@ -52,12 +52,15 @@ struct OneCardFurniture: View {
             LikeButton(color: .white)
         }
         .frame(maxWidth: .infinity, maxHeight: 160)
-        .background(RoundedRectangle(cornerRadius: 25).fill(Color.white))
+        .background(RoundedRectangle(cornerRadius: 25)
+                        .fill(Color.white)
+                        .shadow(color: .grayFurniture, radius: 3, x: 0, y: -1)
+                        .shadow(color: .grayFurniture, radius: 5, x: 0, y: 3))
     }
 }
 
 struct OneCardFurniture_Previews: PreviewProvider {
     static var previews: some View {
-        OneCardFurniture(furniture: ModelData().furnitures[0])
+        OneCardFurniture(furniture: FurnitureViewModel().furnitures[0])
     }
 }

@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct MainView: View {
-    @EnvironmentObject var viewModel: ModelData
-    @State private var selectedСategory = Category.chair
+    @EnvironmentObject var viewModel: FurnitureViewModel
+    @State private var category = Category.chair
+    private let safeArea = ScreenSize()
+    private let cols = [GridItem()]
     
-    var filtelFutnitures: [Furniture] {
-        if selectedСategory != .all {
-            return viewModel.furnitures.filter { item in
-                item.category == selectedСategory.rawValue
-            }
+    private var filtelFutnitures: [Furniture] {
+        if category != .all {
+            return viewModel.furnitures.filter { $0.category == category.rawValue }
         } else {
             return viewModel.furnitures
         }
@@ -23,26 +23,28 @@ struct MainView: View {
     
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [.white, .grayFurniture]), startPoint: .top, endPoint: .bottom)
+            LinearGradient(gradient: Gradient(colors: [.white, .white, .grayFurniture]), startPoint: .top, endPoint: .bottom)
             
-            VStack(spacing: UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 10 : 27) {
+            VStack(spacing: safeArea.insets(10, or: 23)) {
                 TopPanelMenu()
+                    .padding(.top, safeArea.insets(5, or: 0))
                 
                 BannerMainView()
                 
-                SearchPanel(selectedСategory: $selectedСategory)
-                
-                CategoryPanel(category: $selectedСategory)
-                    .padding(.top, 10)
-                
                 ScrollView {
-                    VStack(spacing: 13) {
-                        ForEach(filtelFutnitures) { item in
-                            OneCardFurniture(furniture: item)
-                                .padding(.horizontal, 22)
+                    SearchPanel(select: $category)
+                        .padding(.bottom, 13)
+                    
+                    LazyVGrid(columns: cols, spacing: 13, pinnedViews: [.sectionHeaders]) {
+                        Section(header: CategoryPanel(select: $category)) {
+                            
+                            ForEach(filtelFutnitures) { item in
+                                OneCardFurniture(furniture: item)
+                                    .padding(.horizontal, 22)
+                            }
                         }
                     }
-                    .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 65 : 90)
+                    .padding(.bottom, safeArea.insets(65, or: 90))
                 }
             }
             
@@ -55,6 +57,6 @@ struct MainView: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
-            .environmentObject(ModelData())
+            .environmentObject(FurnitureViewModel())
     }
 }
