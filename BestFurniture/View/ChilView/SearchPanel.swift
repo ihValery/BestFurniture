@@ -9,7 +9,11 @@ import SwiftUI
 
 struct SearchPanel: View {
     @State private var search: String = ""
-    @Binding var selectedСategory: Category
+    @Binding var category: Category
+    
+    init(select: Binding<Category>) {
+        _category = select
+    }
     
     var body: some View {
         HStack {
@@ -34,29 +38,25 @@ struct SearchPanel: View {
             
             Button(action: {
                 withAnimation(.spring(dampingFraction: 0.4)) {
-                    selectedСategory = .all
+                    category = .all
                 }
             }, label: {
                 Image("tune")
                     .renderingMode(.template)
                     .resizable()
-                    .foregroundColor(this() ? .purpleFurniture : .white)
+                    .foregroundColor(category == .all ? .purpleFurniture : .white)
                     .frame(width: 28, height: 28)
                     .padding(12)
                     .background(RoundedRectangle(cornerRadius: 13)
-                                    .fill(this() ? Color.grayFurniture : .orangeFurniture))
+                                    .fill(category == .all ? Color.grayFurniture : .orangeFurniture))
             })
         }
         .padding(.horizontal, 22)
-    }
-    
-    private func this() -> Bool {
-        selectedСategory == .all
     }
 }
 
 struct SearchPanel_Previews: PreviewProvider {
     static var previews: some View {
-        SearchPanel(selectedСategory: .constant(.all))
+        SearchPanel(select: .constant(.all))
     }
 }

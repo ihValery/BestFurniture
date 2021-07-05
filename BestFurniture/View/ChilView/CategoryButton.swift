@@ -1,5 +1,5 @@
 //
-//  OneButtonFurniture.swift
+//  CategoryButton.swift
 //  BestFurniture
 //
 //  Created by Валерий Игнатьев on 3.07.21.
@@ -7,17 +7,13 @@
 
 import SwiftUI
 
-struct OneButtonFurniture: View {
+struct CategoryButton: View {
     let type: Category
     @Binding var select: Category
-    let action: () -> ()
     
     var body: some View {
         Button(action: {
-            withAnimation(.spring(dampingFraction: 0.6)) {
-                select = type
-            }
-            action()
+            select = type
         }, label: {
             HStack {
                 HStack {
@@ -44,11 +40,12 @@ struct OneButtonFurniture: View {
             }
             .padding(1)
         })
+        .animation(.spring(dampingFraction: 0.6))
     }
 }
 
 struct SelectionFurniture_Previews: PreviewProvider {
     static var previews: some View {
-        OneButtonFurniture(type: .all, select: .constant(.all), action: {})
+        CategoryButton(type: .chair, select: .constant(.chair))
     }
 }
