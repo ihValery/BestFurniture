@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct OneImageFurniture: View {
+    var furniture: Furniture
+    
     var body: some View {
-        Image("chair1red")
+        furniture.image
             .resizable()
             .scaledToFill()
             .padding(8)
@@ -21,6 +23,7 @@ struct OneImageFurniture: View {
 
 struct OneImageFurniture_Previews: PreviewProvider {
     static var previews: some View {
-        OneImageFurniture()
+        let item = dataFurniture[0]
+        OneImageFurniture(furniture: item)
     }
 }
