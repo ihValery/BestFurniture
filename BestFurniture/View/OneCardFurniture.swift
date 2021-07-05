@@ -8,18 +8,20 @@
 import SwiftUI
 
 struct OneCardFurniture: View {
+    var furniture: Furniture
+    
     var body: some View {
         ZStack {
             HStack(spacing: 13) {
-                OneImageFurniture()
+                OneImageFurniture(furniture: furniture)
                 
                 VStack(alignment: .leading) {
-                    Text("Lyrra Chair")
+                    Text(furniture.name)
                         .bold()
                         .foregroundColor(.purpleFurniture)
                     
                     Spacer()
-                    Text("Ergonomical for humans body curve")
+                    Text(furniture.info)
                         .lineLimit(2)
                         .fixedSize(horizontal: false, vertical: true)
                         .font(.body)
@@ -27,7 +29,7 @@ struct OneCardFurniture: View {
                     
                     Spacer()
                     HStack {
-                        Text("$250.0")
+                        Text("$\(String(format: "%.1f", furniture.price))")
                             .font(.headline)
                             .bold()
                             .foregroundColor(.orangeFurniture)
@@ -51,12 +53,12 @@ struct OneCardFurniture: View {
         }
         .frame(maxWidth: .infinity, maxHeight: 160)
         .background(RoundedRectangle(cornerRadius: 25).fill(Color.white))
-        .padding(.horizontal, 22)
     }
 }
 
 struct OneCardFurniture_Previews: PreviewProvider {
     static var previews: some View {
-        OneCardFurniture()
+        let item = dataFurniture[0]
+        OneCardFurniture(furniture: item)
     }
 }

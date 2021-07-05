@@ -18,16 +18,21 @@ struct MainView: View {
                 TopPanelMenu()
                 
                 BannerMainView()
-                
+
                 SearchPanel(selectFur: $selectFur)
                 
                 SelectPanelFurniture(selectFur: $selectFur)
                     .padding(.top, 10)
                 
-                OneCardFurniture()
-                
-                OneCardFurniture()
-                Spacer()
+                ScrollView {
+                    VStack(spacing: 13) {
+                        ForEach(dataFurniture) { item in
+                            OneCardFurniture(furniture: item)
+                                .padding(.horizontal, 22)
+                        }
+                    }
+                    .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 65 : 90)
+                }
             }
 
             TabBarMenu()

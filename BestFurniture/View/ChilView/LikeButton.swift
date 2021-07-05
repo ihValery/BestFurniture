@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LikeButton: View {
-    @State private var likeOn: Bool = true
+    @State private var likeOn: Bool = false
     let color: Color
     
     var body: some View {
