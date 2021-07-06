@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct LikeButton: View {
-    @State private var likeOn: Bool = false
     let color: Color
+    let furniture: Furniture
+    @State private var likeOn: Bool = false
+    @EnvironmentObject var viewModel: FurnitureViewModel
     
     var body: some View {
         HStack {
@@ -17,6 +19,7 @@ struct LikeButton: View {
             VStack {
                 Button(action: {
                     likeOn.toggle()
+                    viewModel.like(furniture)
                 }, label: {
                     Image(likeOn ? "heart.fill" : "heart")
                         .renderingMode(.template)
@@ -39,6 +42,6 @@ struct LikeButton: View {
 
 struct LikeButton_Previews: PreviewProvider {
     static var previews: some View {
-        LikeButton(color: .white)
+        LikeButton(color: .white, furniture: FurnitureViewModel().furnitures[0])
     }
 }

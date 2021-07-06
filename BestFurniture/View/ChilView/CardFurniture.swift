@@ -1,5 +1,5 @@
 //
-//  OneCardFurniture.swift
+//  CardFurniture.swift
 //  BestFurniture
 //
 //  Created by Валерий Игнатьев on 4.07.21.
@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct OneCardFurniture: View {
+struct CardFurniture: View {
     var furniture: Furniture
     
     var body: some View {
         ZStack {
             HStack(spacing: 13) {
-                OneImageFurniture(furniture: furniture)
+                ImageFurniture(furniture)
                 
                 VStack(alignment: .leading) {
                     Text(furniture.name)
@@ -49,7 +49,7 @@ struct OneCardFurniture: View {
             }
             .padding(13)
             
-            LikeButton(color: .white)
+            LikeButton(color: .white, furniture: furniture)
         }
         .frame(maxWidth: .infinity, maxHeight: 160)
         .background(RoundedRectangle(cornerRadius: 25)
@@ -61,6 +61,6 @@ struct OneCardFurniture: View {
 
 struct OneCardFurniture_Previews: PreviewProvider {
     static var previews: some View {
-        OneCardFurniture(furniture: FurnitureViewModel().furnitures[0])
+        CardFurniture(furniture: FurnitureViewModel().furnitures[0])
     }
 }

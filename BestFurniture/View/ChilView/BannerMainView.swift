@@ -23,9 +23,3 @@ struct BannerMainView: View {
         .padding(.horizontal, 22)
     }
 }
-
-struct BannerMainView_Previews: PreviewProvider {
-    static var previews: some View {
-        BannerMainView()
-    }
-}

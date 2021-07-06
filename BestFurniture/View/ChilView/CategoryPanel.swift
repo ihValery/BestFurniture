@@ -19,8 +19,7 @@ struct CategoryPanel: View {
         ScrollView(.horizontal, showsIndicators: false) {
             
             HStack(spacing: 15) {
-                CategoryButton(type: .chair, select: $category)
-                    .padding(.leading, 22)
+                CategoryButton(type: .chair, select: $category).padding(.leading, 22)
                 
                 CategoryButton(type: .table, select: $category)
                 
@@ -28,8 +27,7 @@ struct CategoryPanel: View {
                 
                 CategoryButton(type: .sofa, select: $category)
                 
-                CategoryButton(type: .buffet, select: $category)
-                    .padding(.trailing, 22)
+                CategoryButton(type: .buffet, select: $category).padding(.trailing, 22)
             }
             .padding(.top, 3)
             .padding(.bottom, 10)

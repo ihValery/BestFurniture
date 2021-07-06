@@ -26,7 +26,7 @@ struct CategoryButton: View {
                     }
                     Text(type.rawValue.firstCapitalized)
                         .foregroundColor(select == type ? .white : .purpleFurniture)
-                        .font(.body)
+                        .font(.callout)
                         .padding(.vertical, 5)
                 }
                 .fixedSize()
