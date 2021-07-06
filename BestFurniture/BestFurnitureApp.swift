@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct BestFurnitureApp: App {
-    @StateObject private var viewModel = FurnitureViewModel()
+    @StateObject var viewModel = FurnitureViewModel()
     
     var body: some Scene {
         WindowGroup {

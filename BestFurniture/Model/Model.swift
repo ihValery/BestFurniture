@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct Furniture: Identifiable, Codable, Hashable {
-    var id: Int
-    var name: String
-    var category: String
-    var description: String
+    let id: Int
+    let name: String
+    let category: String
+    let description: String
     var isFavorite: Bool
     
-    private var price: Double
+    private let price: Double
     var priceStr: String {
         String(format: "$%.1f", price)
     }
     
-    private var imageName: String
+    private let imageName: String
     var image: Image {
         Image(imageName)
     }

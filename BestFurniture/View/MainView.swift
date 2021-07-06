@@ -13,7 +13,7 @@ struct MainView: View {
     private let safeArea = ScreenSize()
     private let cols = [GridItem()]
     
-    private var filtelFutnitures: [Furniture] {
+    private var filterFutnitures: [Furniture] {
         if category != .all {
             return viewModel.furnitures.filter { $0.category == category.rawValue }
         } else {
@@ -38,9 +38,11 @@ struct MainView: View {
                     LazyVGrid(columns: cols, spacing: 13, pinnedViews: [.sectionHeaders]) {
                         Section(header: CategoryPanel(select: $category)) {
                             
-                            ForEach(filtelFutnitures) { item in
-                                OneCardFurniture(furniture: item)
+                            ForEach(filterFutnitures) { item in
+                                CardFurniture(furniture: item)
                                     .padding(.horizontal, 22)
+                                    .transition(.slide)
+                                    .animation(.ripple(delay(item)))
                             }
                         }
                     }
@@ -51,6 +53,11 @@ struct MainView: View {
             TabBarMenu()
         }
         .edgesIgnoringSafeArea(.bottom)
+    }
+    
+    private func delay(_ furniture: Furniture) -> Int {
+        guard let index = filterFutnitures.searchIndex(furniture) else { return 0 }
+        return index
     }
 }
 

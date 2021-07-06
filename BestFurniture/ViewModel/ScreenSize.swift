@@ -10,8 +10,8 @@ import UIKit
 class ScreenSize {
     
     func insets(_ number: Int, or: Int? = nil) -> CGFloat? {
-        if let number2 = or {
-            return CGFloat(UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? number : number2)
+        if let numberTwo = or {
+            return CGFloat(UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? number : numberTwo)
         }
         
         return UIApplication.shared.windows.first?.safeAreaInsets.bottom
