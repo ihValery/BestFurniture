@@ -98,7 +98,7 @@
 			children = (
 				80854206268FE0F100CD5424 /* BestFurnitureApp.swift */,
 				8085423F2690E82B00CD5424 /* Model */,
-				80FDE5C02692E56300FCCD1A /* ViewModelNEWWW */,
+				80FDE5C02692E56300FCCD1A /* ViewModel */,
 				80854234268FE86800CD5424 /* View */,
 				80854231268FE74E00CD5424 /* Extension */,
 				80854238268FF62700CD5424 /* Shape */,
@@ -176,13 +176,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		80FDE5C02692E56300FCCD1A /* ViewModelNEWWW */ = {
+		80FDE5C02692E56300FCCD1A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				80FDE5CE2693176500FCCD1A /* LocalDataFetcher.swift */,
 				80FDE5D02693221600FCCD1A /* ScreenSize.swift */,
 			);
-			path = ViewModelNEWWW;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		80FDE5C12692E58600FCCD1A /* MainView */ = {
