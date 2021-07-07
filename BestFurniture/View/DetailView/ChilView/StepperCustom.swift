@@ -13,7 +13,9 @@ struct StepperCustom: View {
     var body: some View {
         HStack(spacing: 10) {
             Button(action: {
-                if count >= 2 { count -= 1 }
+                withAnimation(.linear) {
+                    if count >= 2 { count -= 1 }
+                }
             }, label: {
                 Image(systemName: "minus")
                     .frame(width: 15, height: 15)
@@ -27,7 +29,9 @@ struct StepperCustom: View {
             Text(String(format: "%02d", count))
             
             Button(action: {
-                if count < 10 { count += 1 }
+                withAnimation(.linear) {
+                    if count < 10 { count += 1 }
+                }
             }, label: {
                 Image(systemName: "plus")
                     .frame(width: 15, height: 15)
