@@ -35,6 +35,8 @@ struct BottomPanel: View {
 
         }
         .frame(maxWidth: .infinity, maxHeight: 50)
+        .padding(.horizontal, 22)
+        .padding(.bottom, 15)
     }
 }
 
