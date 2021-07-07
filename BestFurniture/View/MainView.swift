@@ -10,7 +10,6 @@ import SwiftUI
 struct MainView: View {
     @EnvironmentObject var viewModel: FurnitureViewModel
     @State private var category = Category.chair
-    private let safeArea = ScreenSize()
     private let cols = [GridItem()]
     
     private var filterFutnitures: [Furniture] {
@@ -25,9 +24,9 @@ struct MainView: View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [.white, .white, .grayFurniture]), startPoint: .top, endPoint: .bottom)
             
-            VStack(spacing: safeArea.insets(10, or: 23)) {
+            VStack(spacing: safeAreaInsets(10, or: 23)) {
                 TopPanelMenu()
-                    .padding(.top, safeArea.insets(5, or: 0))
+                    .padding(.top, safeAreaInsets(5, or: 0))
                 
                 BannerMainView()
                 
@@ -46,10 +45,12 @@ struct MainView: View {
                             }
                         }
                     }
-                    .padding(.bottom, safeArea.insets(65, or: 90))
+                    .padding(.bottom, safeAreaInsets(65, or: 90))
                 }
             }
-            
+
+            AnimateOnAppear()
+
             TabBarMenu()
         }
         .edgesIgnoringSafeArea(.bottom)

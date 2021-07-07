@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct TabBarMenu: View {
-    private let safeArea = ScreenSize()
     @State private var button = TabBar.plus
     @State private var position: CGFloat = UIScreen.main.bounds.width / 2
     
@@ -28,8 +27,8 @@ struct TabBarMenu: View {
                 TabBarButton(type: .user, select: $button, curve: $position)
             }
             //В зависимости от девайса у нас разный padding
-            .padding(.horizontal, safeArea.insets(25, or: 30))
-            .padding(.bottom, safeArea.insets(8))
+            .padding(.horizontal, safeAreaInsets(25, or: 30))
+            .padding(.bottom, safeAreaInsets(8))
             .padding(.top, 8)
             .background(Color.white.clipShape(Curve(position)))
         }
