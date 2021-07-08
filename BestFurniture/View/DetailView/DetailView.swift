@@ -13,6 +13,7 @@ struct DetailView: View {
     @State private var image: String = imageArray[0]
     @State private var offset: CGFloat = 0
     private var cols = [GridItem()]
+    private var frameBigImage: CGFloat = UIScreen.main.bounds.height > 750 ? 450 : 400
     
     var body: some View {
         VStack {
@@ -50,14 +51,14 @@ struct DetailView: View {
                                 Spacer()
                                 BigImagePreview(name: $image)
                                     .offset(y: offsetminY > 0 ? -offsetminY : 0)
-                                    .frame(height: offsetminY > 0 ? 410 + offsetminY : 410)
+                                    .frame(height: offsetminY > 0 ? frameBigImage + offsetminY : frameBigImage)
                             }
 //                            .aspectRatio(0.85, contentMode: .fit)
                         }
                     )
                     
                 }
-                .frame(height: 410)
+                .frame(height: frameBigImage)
                 
                 LazyVGrid(columns: cols, pinnedViews: [.sectionHeaders]) {
                     Section(header: HeaderDescription()
@@ -65,7 +66,7 @@ struct DetailView: View {
                                 .background(Color.white
                                                 .frame(height: 130)
                                                 .offset(y: -40)
-                                                .opacity(offset > 410 ? 1 : 0))) {
+                                                .opacity(offset > frameBigImage ? 1 : 0))) {
                         Description()
                     }
                 }
