@@ -13,9 +13,9 @@ struct HeaderDescription: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 15) {
-            Text("Lyrra Moder Chait")
+            Text("Lyrra Moder Chair")
                 .foregroundColor(.purpleFurniture)
-                .font(.largeTitle)
+                .font(.title)
             HStack {
                 Group {
                     Text("".fullPrice(price: price, count: count))
@@ -35,6 +35,7 @@ struct HeaderDescription: View {
         }
         .padding(.horizontal, 22)
         .padding(.bottom, 15)
+        .background(Color.white)
     }
 }
 

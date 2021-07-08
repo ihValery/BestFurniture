@@ -18,15 +18,17 @@ struct StepperCustom: View {
                 }
             }, label: {
                 Image(systemName: "minus")
-                    .frame(width: 15, height: 15)
+                    .font(.footnote)
+                    .frame(width: 11, height: 11)
                     .padding(5)
                     .foregroundColor(.purpleFurniture)
                     .background(
-                        RoundedRectangle(cornerRadius: 6)
+                        RoundedRectangle(cornerRadius: 4)
                             .fill(Color.bgFurniture))
             })
             
             Text(String(format: "%02d", count))
+                .font(.footnote)
             
             Button(action: {
                 withAnimation(.linear) {
@@ -34,11 +36,12 @@ struct StepperCustom: View {
                 }
             }, label: {
                 Image(systemName: "plus")
-                    .frame(width: 15, height: 15)
+                    .font(.footnote)
+                    .frame(width: 11, height: 11)
                     .padding(5)
                     .foregroundColor(.white)
                     .background(
-                        RoundedRectangle(cornerRadius: 6)
+                        RoundedRectangle(cornerRadius: 4)
                             .fill(Color.orangeFurniture))
             })
         }
