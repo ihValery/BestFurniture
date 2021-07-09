@@ -21,6 +21,7 @@ struct MainView: View {
     }
     
     var body: some View {
+        NavigationView {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [.white, .white, .grayFurniture]), startPoint: .top, endPoint: .bottom)
             
@@ -38,8 +39,12 @@ struct MainView: View {
                         Section(header: CategoryPanel(select: $category)) {
                             
                             ForEach(filterFutnitures) { item in
-                                CardFurniture(furniture: item)
-                                    .padding(.horizontal, 22)
+                                NavigationLink(
+                                    destination: DetailView(furniture: item, image: item.images.first ?? "noimage"),
+                                    label: {
+                                        CardFurniture(furniture: item)
+                                            .padding(.horizontal, 22)
+                                    })
                                     .transition(.slide)
                                     .animation(.ripple(delay(item)))
                             }
@@ -53,7 +58,9 @@ struct MainView: View {
 
             TabBarMenu()
         }
+        .navigationBarHidden(true)
         .edgesIgnoringSafeArea(.bottom)
+        }
     }
     
     private func delay(_ furniture: Furniture) -> Int {

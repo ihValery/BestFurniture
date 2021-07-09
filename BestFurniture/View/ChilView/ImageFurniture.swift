@@ -15,7 +15,7 @@ struct ImageFurniture: View {
     }
     
     var body: some View {
-        furniture.image
+        Image(furniture.images.first ?? "noimage")
             .resizable()
             .scaledToFill()
             .padding(8)

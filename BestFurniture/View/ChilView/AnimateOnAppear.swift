@@ -21,6 +21,9 @@ struct AnimateOnAppear: View {
                 .onAppear {
                     expand.toggle()
                 }
+                .onDisappear {
+                    expand.toggle()
+                }
                 .animation(.linear)
         }
     }
