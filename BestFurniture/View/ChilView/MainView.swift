@@ -40,7 +40,7 @@ struct MainView: View {
                             
                             ForEach(filterFutnitures) { item in
                                 NavigationLink(
-                                    destination: DetailView(furniture: item, image: item.images.first ?? "noimage"),
+                                    destination: DetailView(furniture: item),
                                     label: {
                                         CardFurniture(furniture: item)
                                             .padding(.horizontal, 22)
@@ -54,7 +54,7 @@ struct MainView: View {
                 }
             }
 
-            AnimateOnAppear()
+//            AnimateOnAppear()
 
             TabBarMenu()
         }
