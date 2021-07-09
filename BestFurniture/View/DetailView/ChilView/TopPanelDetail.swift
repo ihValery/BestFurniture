@@ -18,6 +18,8 @@ struct TopPanelDetail: View {
                 presentationMode.wrappedValue.dismiss()
             }, label: {
                 ImageTopPanel(name: "back")
+                    .background(Color.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 13))
             })
             
             Spacer()
@@ -31,6 +33,8 @@ struct TopPanelDetail: View {
                     .frame(width: 23, height: 23)
                     .padding(9)
                     .foregroundColor(furniture.isFavorite ? .orangeFurniture : .gray)
+                    .background(Color.bgFurniture)
+                    .clipShape(RoundedRectangle(cornerRadius: 13))
                     .overlay(
                         RoundedRectangle(cornerRadius: 13)
                             .stroke(Color.gray.opacity(0.5), lineWidth:1))
