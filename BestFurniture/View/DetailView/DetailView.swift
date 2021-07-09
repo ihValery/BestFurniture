@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct DetailView: View {
+    
     let furniture: Furniture
-    @State var image: String
+    @State private var image: String
     @State private var offset: CGFloat = 0
     var cols = [GridItem()]
     var frameBigImage: CGFloat = UIScreen.main.bounds.height > 750 ? 450 : 400
+    
+    init(furniture: Furniture) {
+        self.furniture = furniture
+        self.image = furniture.images[0]
+    }
     
     var body: some View {
         VStack {
@@ -81,6 +87,6 @@ struct DetailView: View {
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         let futnitures = FurnitureViewModel().furnitures[0]
-        DetailView(furniture: futnitures, image: futnitures.images[0])
+        DetailView(furniture: futnitures)
     }
 }
