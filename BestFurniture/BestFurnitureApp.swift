@@ -13,7 +13,7 @@ struct BestFurnitureApp: App {
     
     var body: some Scene {
         WindowGroup {
-            DetailView()
+            MainView()
                 .environmentObject(viewModel)
         }
     }

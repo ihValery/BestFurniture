@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-let imageArray: [String] = ["chair1brown", "chair1green", "chair1red", "chair1orange"]
-
 struct DetailView: View {
-    @State private var image: String = imageArray[0]
+    let furniture: Furniture
+    @State var image: String
     @State private var offset: CGFloat = 0
-    private var cols = [GridItem()]
+    var cols = [GridItem()]
+    var frameBigImage: CGFloat = UIScreen.main.bounds.height > 750 ? 450 : 400
     
     var body: some View {
         VStack {
@@ -29,7 +29,7 @@ struct DetailView: View {
                     return AnyView(
                         Group {
                             VStack {
-                                TopPanelMenu()
+                                TopPanelDetail(furniture: furniture)
                                 Spacer()
                             }
                             .offset(y: offsetminY > 0 ? -offsetminY + 45 : 45)
@@ -39,7 +39,7 @@ struct DetailView: View {
                                 Spacer()
                                 
                                 VStack(spacing: 20) {
-                                    ForEach(imageArray, id: \.self) { item in
+                                    ForEach(furniture.images, id: \.self) { item in
                                         SmallImagePreviews(name: item)
                                             .onTapGesture {
                                                 withAnimation { image = item }
@@ -49,36 +49,38 @@ struct DetailView: View {
                                 
                                 Spacer()
                                 BigImagePreview(name: $image)
-                                    .offset(y: offsetminY > 0 ? -offsetminY : 0)
-                                    .frame(height: offsetminY > 0 ? 410 + offsetminY : 410)
                             }
-//                            .aspectRatio(0.85, contentMode: .fit)
+                            .offset(y: offsetminY > 0 ? -offsetminY : 0)
+                            .frame(height: offsetminY > 0 ? frameBigImage + offsetminY : frameBigImage)
                         }
                     )
                     
                 }
-                .frame(height: 410)
+                .frame(height: frameBigImage)
                 
                 LazyVGrid(columns: cols, pinnedViews: [.sectionHeaders]) {
-                    Section(header: HeaderDescription()
+                    Section(header: HeaderDescription(furniture: furniture)
                                 //прячем скрол в safeArea
                                 .background(Color.white
                                                 .frame(height: 130)
                                                 .offset(y: -40)
-                                                .opacity(offset > 410 ? 1 : 0))) {
-                        Description()
+                                                .opacity(offset > frameBigImage ? 1 : 0))) {
+                        Description(furniture: furniture)
                     }
                 }
             }
             
             BottomPanel()
         }
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
         .edgesIgnoringSafeArea(.bottom)
     }
 }
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView()
+        let futnitures = FurnitureViewModel().furnitures[0]
+        DetailView(furniture: futnitures, image: futnitures.images[0])
     }
 }

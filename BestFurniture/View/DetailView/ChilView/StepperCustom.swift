@@ -28,7 +28,7 @@ struct StepperCustom: View {
             })
             
             Text(String(format: "%02d", count))
-                .font(.footnote)
+                .font(.body)
             
             Button(action: {
                 withAnimation(.linear) {

@@ -32,12 +32,12 @@ extension String {
 }
 
 extension String {
-    func fullPrice(price: Int, count: Int) -> String {
+    func fullPrice(price: Double, count: Int) -> String {
         var discount: Float {
             if count >= 2 { return Float(count) * 2.5 }
             return 0
         }
-        let fullPrice = Float(price * count)
+        let fullPrice = Float(price * Double(count))
         let result = fullPrice - fullPrice * discount / 100
         
         return "$\(result)"
