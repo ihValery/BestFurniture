@@ -18,13 +18,13 @@ struct CategoryButton: View {
             HStack {
                 HStack {
                     if select == type {
-                        Image(type.rawValue.firstCapitalized)
+                        Image(type.rawValue)
                             .renderingMode(.template)
                             .resizable()
                             .frame(width: 28, height: 28)
                             .foregroundColor(.white)
                     }
-                    Text(type.rawValue.firstCapitalized)
+                    Text(type.rawValue)
                         .foregroundColor(select == type ? .white : .purpleFurniture)
                         .font(.callout)
                         .padding(.vertical, 5)
