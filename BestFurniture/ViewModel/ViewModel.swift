@@ -5,15 +5,17 @@
 //  Created by Валерий Игнатьев on 6.07.21.
 //
 
-import Foundation
+import SwiftUI
 import Combine
 
 class FurnitureViewModel: ObservableObject {
     var localDataFetcher = LocalDataFetcher()
     @Published var furnitures: [Furniture]
+    @Published var offset: CGFloat
     
     init() {
         self.furnitures = localDataFetcher.load("furnitureData.json")
+        self.offset = 0
     }
     
     func like(_ furniture: Furniture) {
