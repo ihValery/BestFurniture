@@ -9,113 +9,87 @@ import SwiftUI
 
 struct DetailView: View {
     let furniture: Furniture
-    var cols: [GridItem]
-    var frameBigImage: CGFloat
-    @State private var image: String
-    @State private var offset: CGFloat = 0
+    private let frameBigImage: CGFloat
+    @State private var image: String 
+    @ObservedObject var viewModel: FurnitureViewModel
     
     init(furniture: Furniture) {
         self.furniture = furniture
-        self.image = furniture.images[0]
-        self.cols = [GridItem()]
-        self.frameBigImage =  UIScreen.main.bounds.height > 750 ? 450 : 400
+        image = furniture.images[0]
+        frameBigImage = UIScreen.main.bounds.height > 750 ? 450 : 400
+        viewModel = FurnitureViewModel()
     }
     
     var body: some View {
-            VStack {
-                ScrollView {
-                    LazyVGrid(columns: cols, pinnedViews: [.sectionHeaders, .sectionHeaders]) {
-                        
-                        Section(header:
-                                    VStack {
-                                        TopPanelDetail(furniture: furniture)
-//                                            .offset(y: -offsetminY + 45)
-//                                            .background(Color.white
-//                                                            .frame(height: 100)
-////                                                            .offset(y: offsetminY > 0 ? -500: -offsetminY + 25)
-//    //                                                        .animation(.easeIn)
-//        
-//                                            )
-                                        Spacer()
-                                    }) {
-
-                        
-                        GeometryReader { gr -> AnyView in
-                            let offsetminY = gr.frame(in: .global).minY
-                            
-                            if -offsetminY >= 0 {
-                                DispatchQueue.main.async {
-                                    offset = -offsetminY
-                                }
-                            }
-                            
-                            return AnyView(
-                                Group {
-//                                    VStack {
-//                                        TopPanelDetail(furniture: furniture)
-//                                            .offset(y: -offsetminY + 45)
-//                                            .background(Color.white
-//                                                            .frame(height: 100)
-//                                                            .offset(y: offsetminY > 0 ? -500: -offsetminY + 25)
-//    //                                                        .animation(.easeIn)
-//
-//                                            )
-//                                        Spacer()
-//                                    }
-//                                    .zIndex(1)
-                                    
-                                    HStack {
-                                        Spacer()
-                                        
-                                        VStack(spacing: 20) {
-                                            ForEach(furniture.images, id: \.self) { item in
-                                                SmallImagePreviews(name: item)
-                                                    .onTapGesture {
-                                                        withAnimation { image = item }
-                                                    }
-                                            }
-                                        }
-                                        
-                                        Spacer()
-                                        BigImagePreview(name: $image)
-                                    }
-                                    .offset(y: offsetminY > 0 ? -offsetminY : 0)
-                                    .frame(height: offsetminY > 0 ? frameBigImage + offsetminY : frameBigImage)
-                                }
-                            )
-                            
-                        }
-                        .frame(height: frameBigImage)
-                    }
-                    }
+        VStack {
+            ScrollView {
+                LazyVStack(alignment: .leading, spacing: nil, pinnedViews: [.sectionHeaders], content: {
                     
-                    LazyVGrid(columns: cols, pinnedViews: [.sectionHeaders]) {
-                        Section(header: HeaderDescription(furniture: furniture)
-
-//                                    .offset(y: offset > frameBigImage - 75 ? CGFloat(UIApplication.shared.windows.first!.safeAreaInsets.top) : 0)
-//                                    .animation(.easeIn)
-                                    //прячем скрол в safeArea
-//                                    .background(Color.red.opacity(0.3)
-//                                                    .frame(height: 130)
-//                                                    .offset(y: -40)
-//                                                    .opacity(offset > frameBigImage - 100 ? 1 : 0))
-                        ) {
-                            Description(furniture: furniture)
+                    //Parallax Header
+                    GeometryReader { gr -> AnyView in
+                        let offset = gr.frame(in: .global).minY
+                        
+                        //Что бы спрятать скролл в безопасной зоне
+                        DispatchQueue.main.async {
+                            viewModel.offset = -offset
                         }
+                        
+                        return AnyView(
+                            HStack {
+                                Spacer()
+                                
+                                VStack(spacing: 20) {
+                                    ForEach(furniture.images, id: \.self) { item in
+                                        SmallImagePreviews(name: item)
+                                            .onTapGesture {
+                                                withAnimation { image = item }
+                                            }
+                                    }
+                                }
+                                .padding(.top, 70)
+                                
+                                Spacer()
+                                BigImagePreview(name: $image)
+                            }
+                            .offset(y: offset > 0 ? -offset : 0)
+                            .frame(height: frameBigImage + (offset > 0 ? offset : 0))
+                            
+                            .overlay(
+                                TopPanelDetail(furniture: furniture)
+                                    .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top)
+                                    .offset(y: offset > 0 ? -offset : 0)
+                                , alignment: .top)
+                        )
                     }
-                }
-                
-                BottomPanel()
+                    .frame(height: frameBigImage)
+                    //Parallax Header
+                    
+                    Section(header: HeaderDescription(furniture: furniture, viewModel: viewModel)) {
+                        Description(furniture: furniture)
+                    }
+                })
             }
-            .navigationBarHidden(true)
-            .navigationBarBackButtonHidden(true)
-            .edgesIgnoringSafeArea(.bottom)
+            //Закрываем баг скрола
+            .overlay(
+                Color.white
+                    .frame(height: UIApplication.shared.windows.first?.safeAreaInsets.top)
+                    .ignoresSafeArea(.all, edges: .top)
+                    .opacity(viewModel.offset > frameBigImage ? 1 : 0)
+                , alignment: .top
+            )
+            
+            Spacer()
+            BottomPanel()
+        }
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
+        .edgesIgnoringSafeArea(.bottom)
     }
 }
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        let futnitures = FurnitureViewModel().furnitures[3]
+        let futnitures = FurnitureViewModel().furnitures[0]
         DetailView(furniture: futnitures)
     }
 }

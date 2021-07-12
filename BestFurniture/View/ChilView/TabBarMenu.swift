@@ -30,7 +30,9 @@ struct TabBarMenu: View {
             .padding(.horizontal, safeAreaInsets(25, or: 30))
             .padding(.bottom, safeAreaInsets(8))
             .padding(.top, 8)
-            .background(Color.white.clipShape(Curve(position)))
+            .background(Color.white
+                            .clipShape(Curve(position))
+            )
         }
     }
 }
