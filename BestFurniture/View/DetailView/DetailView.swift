@@ -40,10 +40,7 @@ struct DetailView: View {
                                 
                                 VStack(spacing: 20) {
                                     ForEach(furniture.images, id: \.self) { item in
-                                        SmallImagePreviews(name: item)
-                                            .onTapGesture {
-                                                withAnimation { image = item }
-                                            }
+                                        SmallImagePreviews(name: item, selectImage: $image)
                                     }
                                 }
                                 .padding(.top, 70)
