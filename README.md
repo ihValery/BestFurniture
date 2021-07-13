@@ -15,6 +15,7 @@
 - Слева Dribble с права моя реализация
 
 <img src="https://github.com/ihValery/BestFurniture/blob/main/image/Furniture.png?raw=true?raw=true"></a>
+<img src="https://github.com/ihValery/BestFurniture/blob/main/image/FurnitureGif.gif?raw=true"></a>
 
 - TabBarMenu - отлично реализована + анимация
  
