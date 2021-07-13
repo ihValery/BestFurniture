@@ -22,8 +22,3 @@ struct Furniture: Identifiable, Codable {
     
     let images: [String]
 }
-//
-//struct ImagePreview: Identifiable, Codable {
-//    var id = UUID().uuidString
-//    let name: String
-//}

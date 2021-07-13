@@ -30,6 +30,7 @@ struct BottomPanel: View {
                     .frame(maxWidth: .infinity, maxHeight: 50)
                     .background(RoundedRectangle(cornerRadius: 10)
                                     .fill(Color.orangeFurniture))
+                    .shadow(color: .orangeFurniture.opacity(0.4), radius: 10, x: 0, y: 10)
                     
             })
 
